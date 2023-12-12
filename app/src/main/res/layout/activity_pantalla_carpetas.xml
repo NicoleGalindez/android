@@ -5,9 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#272727"
-    tools:context=".MainActivity"
-    tools:layout_editor_absoluteX="19dp"
-    tools:layout_editor_absoluteY="0dp">
+    tools:context=".pantallaCarpetas">
 
 
     <ImageView
@@ -92,7 +90,6 @@
 
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
-
 
 
     </LinearLayout>
