@@ -2,9 +2,10 @@
     <string name="app_name">appMusic</string>
 
     <array name="listView">
-        <item >CANCION 1</item>
-        <item >CANCION 2</item>
+        <item>CANCION 1</item>
+        <item>CANCION 2</item>
 
 
     </array>
+    <string name="title_activity_pantallas_albumes">pantallasAlbumes</string>
 </resources>
