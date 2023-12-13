@@ -1,98 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#282828"
-    tools:context=".pantallaAlbumes">
+    android:background="#272727"
+    tools:context=".MainActivity">
 
-
+    <!-- Configuración y barra de búsqueda -->
     <ImageView
         android:id="@+id/imageView7"
         android:layout_width="41dp"
         android:layout_height="33dp"
         app:srcCompat="@drawable/config"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="18dp" />
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <SearchView
-        android:layout_width="333dp"
+        android:id="@+id/searchView"
+        android:layout_width="0dp"
         android:layout_height="37dp"
-        tools:layout_editor_absoluteX="66dp"
-        tools:layout_editor_absoluteY="17dp" />
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView7"
+        app:layout_constraintTop_toTopOf="parent" />
 
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="118dp"
-        android:layout_height="76dp"
-        app:srcCompat="@drawable/listas"
-        tools:layout_editor_absoluteX="146dp"
-        tools:layout_editor_absoluteY="65dp" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="118dp"
-        android:layout_height="76dp"
-        app:srcCompat="@drawable/fav"
-        tools:layout_editor_absoluteX="21dp"
-        tools:layout_editor_absoluteY="65dp" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="118dp"
-        android:layout_height="76dp"
-        app:srcCompat="@drawable/recientes"
-        tools:layout_editor_absoluteX="272dp"
-        tools:layout_editor_absoluteY="65dp" />
-
-    <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="92dp"
-        android:layout_height="33dp"
-        app:srcCompat="@drawable/albumesmorado"
-        tools:layout_editor_absoluteX="205dp"
-        tools:layout_editor_absoluteY="161dp" />
-
-    <ImageView
-        android:id="@+id/imageView12"
-        android:layout_width="84dp"
-        android:layout_height="17dp"
-        app:srcCompat="@drawable/carpetas"
-        tools:layout_editor_absoluteX="302dp"
-        tools:layout_editor_absoluteY="165dp" />
-
-    <ImageView
-        android:id="@+id/imageView13"
-        android:layout_width="100dp"
-        android:layout_height="17dp"
-        app:srcCompat="@drawable/canciones"
-        tools:layout_editor_absoluteX="21dp"
-        tools:layout_editor_absoluteY="163dp" />
-
-    <ImageView
-        android:id="@+id/imageView14"
-        android:layout_width="84dp"
-        android:layout_height="15dp"
-        app:srcCompat="@drawable/artistas"
-        tools:layout_editor_absoluteX="121dp"
-        tools:layout_editor_absoluteY="163dp" />
-
+    <!-- Contenedor horizontal para las primeras 3 imágenes -->
     <LinearLayout
-        android:layout_width="414dp"
-        android:layout_height="440dp"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="-3dp"
-        tools:layout_editor_absoluteY="201dp">
+        android:id="@+id/linearTop"
+        android:layout_width="0dp"
+        android:layout_height="76dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchView">
 
-        <ListView
+        <!-- Imagen 5 -->
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="118dp"
+            android:layout_height="76dp"
+            app:srcCompat="@drawable/listas"
+            android:layout_marginRight="6dp"
+            android:layout_marginLeft="16dp"
+            tools:layout_editor_absoluteX="146dp"
+            tools:layout_editor_absoluteY="65dp" />
 
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+        <!-- Imagen 4 -->
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="118dp"
+            android:layout_height="76dp"
+            app:srcCompat="@drawable/fav"
+            android:layout_marginRight="6dp"
+            android:layout_marginLeft="6dp"
+            tools:layout_editor_absoluteX="22dp"
+            tools:layout_editor_absoluteY="65dp" />
 
-
+        <!-- Imagen 6 -->
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="118dp"
+            android:layout_height="76dp"
+            app:srcCompat="@drawable/recientes"
+            android:layout_marginLeft="6dp"
+            tools:layout_editor_absoluteX="272dp"
+            tools:layout_editor_absoluteY="65dp" />
     </LinearLayout>
 
+    <!-- Contenedor horizontal para las últimas 4 imágenes -->
+    <LinearLayout
+        android:id="@+id/linearBottom"
+        android:layout_width="0dp"
+        android:layout_height="76dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearTop">
+
+        <!-- Imagen 13 -->
+        <ImageView
+            android:id="@+id/imageView13"
+            android:layout_width="84dp"
+            android:layout_height="15dp"
+            app:srcCompat="@drawable/canciones"
+            android:layout_weight="1" />
+
+        <!-- Imagen 14 -->
+        <ImageView
+            android:id="@+id/imageView14"
+            android:layout_width="84dp"
+            android:layout_height="15dp"
+            app:srcCompat="@drawable/artistas"
+            android:layout_weight="1" />
+
+        <!-- Imagen 11 -->
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="50dp"
+            android:layout_height="29dp"
+            app:srcCompat="@drawable/albumesmorado"
+            android:layout_weight="1" />
+
+        <!-- Imagen 12 -->
+        <ImageView
+            android:id="@+id/imageView12"
+            android:layout_width="84dp"
+            android:layout_height="17dp"
+            app:srcCompat="@drawable/carpetas"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <!-- Contenedor para ListView -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/linearBottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="552dp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="79dp"
+            app:srcCompat="@drawable/inferior" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
